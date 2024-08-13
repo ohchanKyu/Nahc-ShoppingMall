@@ -1,0 +1,59 @@
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" crossorigin="anonymous"></link>
+</head>
+<header id="header">
+    <nav class="navbar navbar-expand-lg  navbar-light bg-light">
+        <a class="navbar-brand" href="#"> NaHC </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('mainPage') }}"> Home <span class="sr-only">(current)</span></a>
+                </li>
+                {% if logged: %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}"> Logout </a>
+                    </li>
+                {% else: %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('loginPage') }}"> Login </a>
+                    </li>
+                {% endif %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        My Page
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ url_for('basketPage') }}"> 장바구니 </a>
+                        <a class="dropdown-item" href="{{ url_for('buyListPage') }}"> 구매내역 </a>
+                        <a class="dropdown-item" href="{{ url_for('myListPage') }}"> 찜한상품 </a>
+                        <div class="dropdown-divider"></div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Category
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="{{ url_for('categoryPage',num=1) }}"> Galaxy Phone </a>
+                        <a class="dropdown-item" href="{{ url_for('categoryPage',num=2) }}"> Iphone </a>
+                        <a class="dropdown-item" href="{{ url_for('categoryPage',num=3) }}"> Galaxy Book </a>
+                        <a class="dropdown-item" href="{{ url_for('categoryPage',num=4) }}"> Mac Book </a>
+                        <a class="dropdown-item" href="{{ url_for('categoryPage',num=5) }}"> Desktop </a>
+                        <div class="dropdown-divider"></div>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" style="margin-right:30px;" action="{{ url_for('searchPage') }}" method="post">
+                <i class="fa-solid fa-magnifying-glass" style="margin-right:10px; font-size:25px;"></i>
+                <input class="form-control mr-sm-2" name="search_keyword" type="search" placeholder="Search" aria-label="Search" style="border-radius:5%;">
+            </form>
+             {% if logged: %}
+                <span style="font-weight:bold;;"><span class="profile_name" style="color:#000;">{{ current_user.name }}</span><span style="color:#000">님</span></span>
+             {% endif %}
+        </div>
+    </nav>
+</header>

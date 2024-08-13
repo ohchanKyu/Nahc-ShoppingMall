@@ -1,0 +1,142 @@
+#section{
+    padding:0 5%;
+    margin:5% 0;
+}
+.image_box{
+   text-align:center;
+}
+.item_image{
+    width:80%;
+}
+.text_box{
+    border:3px solid #f4f4f4;
+}
+.text-container{
+    margin-top:30px;
+}
+.text-container, .review_container, .payment_box{
+    padding:0 10%;
+}
+.category, .item_title, .price, .review_count, .total_ratio ,.payment{
+    font-weight:bold;
+}
+.category{
+    text-decoration:underline;
+    font-size:18px;
+    margin-bottom:8px;
+}
+.item_title{
+    color:#000;
+    font-size:20px;
+    word-break:keep-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.price_container{
+    position:relative;
+    margin-top:20px;
+}
+.price{
+    float:right;
+    font-size:24px;
+    color:#999;
+}
+.price_description{
+    font-size:14px;
+    position:absolute;
+    font-weight:bold;
+    top:5px;
+}
+.button_container{
+    clear:both;
+    padding-top:3%;
+}
+.button_description{
+    font-size:14px;
+    color:#999;
+    display:inline-block;
+    font-weight:bold;
+}
+.review_count{
+    color:#999;
+    font-size:14px;
+    margin-top:20px;
+}
+.graph_mask
+{
+    position:relative;
+	display:inline-block;
+	width:80px;
+	height:13px;
+	background-position:0 -61px;
+	right:5px;
+}
+.star_image_box
+{
+	position:relative;
+	overflow:hidden;
+	width:110px;
+	height:20px;
+}
+.star_image, .no_star_image
+{
+	position:absolute;
+	object-fit:cover;
+	object-position:0% 0%;
+	height:20px;
+}
+.total_ratio{
+    position:relative;
+    bottom:5px;
+    font-size:14px;
+    margin-left:20px;
+}
+.payment_box{
+    margin-top:20px;
+}
+.payment{
+    margin-left:10px;
+}
+.love{
+    margin-left:10px;
+    height:37.3px !important;
+    line-height:1.5 !important;
+}
+.gototop
+{
+    z-index:1200;
+    position:relative;
+    background-color:#e9ecef;
+    text-align:center;
+    margin-top:10px;
+}
+.lnk_top
+{
+    padding:18px 0px 19.5px;
+    font-size:15px;
+    color:#000;
+}
+#footer
+{
+    margin-top:40px;
+    z-index:1200;
+    position:relative;
+    background-color:#e9ecef;
+    word-wrap:break-word;
+    text-align:center;
+    clear:both;
+    height:140px;
+}
+.name1
+{
+    margin-top:10px;
+    font-size:15px;
+    color:#999;
+}
+.copyright
+{
+    padding-right:10px;
+    font-size:13px;
+    color:#999;
+}

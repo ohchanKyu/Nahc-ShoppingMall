@@ -1,0 +1,106 @@
+#section{
+    margin:0 auto;
+    width:50%;
+    margin-top:30px;
+}
+.section_header{
+    text-align:center;
+    font-weight:bold;
+    padding:3% 0;
+    font-style:italic;
+}
+hr{
+    margin-top:0 !important;
+}
+.total_number{
+    font-weight:bold;
+    font-size:14px;
+    color:#999;
+}
+.item_container{
+    margin:5% 0;
+}
+.text_container{
+    float:right;
+    padding:3% 5%;
+    width:400px !important;
+}
+.button_container{
+    margin-top:10px;
+}
+.item_image{
+    width:230px;
+    vertical-align: text-bottom;
+}
+.item_date, .item_price, .item_quantity{
+    font-weight:bold;
+    font-size:14px;
+}
+.item_title{
+    display: -webkit-box;
+    color:#999;
+    font-weight:bold;
+    word-break:keep-all;
+    margin-bottom:10px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.no_buy_list{
+    text-align:center;
+    margin:5% 0;
+    font-weight:bold;
+    color:#999;
+}
+.kakaopay{
+    color:#eeb408;
+}
+.buy_info{
+    margin-top:10px;
+}
+.buy_info_header, .item_info_header{
+    font-weight:bold;
+}
+.buy_info_text{
+    font-size:13px;
+    font-weight:bold;
+    color:#999;
+    margin:0;
+}
+.gototop
+{
+    z-index:1200;
+    position:relative;
+    background-color:#e9ecef;
+    text-align:center;
+    margin-top:10px;
+}
+.lnk_top
+{
+    padding:18px 0px 19.5px;
+    font-size:15px;
+    color:#000;
+}
+#footer
+{
+    margin-top:40px;
+    z-index:1200;
+    position:relative;
+    background-color:#e9ecef;
+    word-wrap:break-word;
+    text-align:center;
+    clear:both;
+    height:140px;
+}
+.name1
+{
+    margin-top:10px;
+    font-size:15px;
+    color:#999;
+}
+.copyright
+{
+    padding-right:10px;
+    font-size:13px;
+    color:#999;
+}

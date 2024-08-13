@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+    <link rel="stylesheet" href="../static/css/product/payment.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" crossorigin="anonymous"></link>
+</head>
+<body>
+{% include "header.html" %}
+    <section id="section">
+        <div class="row">
+            <div class="col-lg-6 item-box">
+                <div class="image_container">
+                    <img src="{{ item.image}}" class="item_image" alt="item_image">
+                </div>
+                <div class="text_container">
+                    <div class="category"> {{ category }}</div>
+                    <span class="visually_hidden" id="item_id" style="display:none;"> {{ item.id }}</span>
+                    <div class="item_title">
+                        <div class="item_title_description">
+                            상품명
+                        </div>
+                        {{ item.title }}
+                    </div>
+                </div>
+                <div class="remain_item">
+                    <i class="fa-brands fa-dropbox" style="margin-right:5px;"></i><span class="remain_item_text">현재 남은 수량 </span>
+                    <span class="item_count">{{ item.count }}</span>
+                </div>
+                <div class="price">
+                    <i class="fa-solid fa-coins" style="margin-right:5px;"></i><span class="price_text">현재 구매 가격 </span>
+                    <span class="item_price">{{ item.price }}</span>
+                </div>
+                <div class="item_count">
+                    <div class="item_count_header">
+                        수량을 선택해주세요
+                    </div>
+                    <div class="count_control">
+                        <div class="clearfix">
+                            <a class="btn_plus_minus spr_book2 ico_minus3 disabled"></a>
+                            <input type="tel" class="count_control_input disabled" value="0" id="count_value">
+                            <a class="btn_plus_minus spr_book2 ico_plus3"></a>
+                        </div>
+                    </div>
+                    <div class="individual_price">
+                            <div class="total_price_text">
+                                <span style="font-size:13px;">총 상품 금액</span> <br>
+                                <div class="total_price">0</div><span class="price_type">원</span>
+                            </div>
+                    </div>
+                    <div class="section_booking_agreement">
+						<div class="agreement all">
+							<input type="checkbox" id="ck3" class="chk_agree">
+							<label for="ck3" class="label chk_txt_label" data-check="0">
+								<span>이용자 약관 전체동의</span>
+							</label>
+							<div class="agreement_nessasary">
+								<span>필수동의</span>
+							</div>
+						</div>
+						<div class="agreement">
+							<span class="chk_txt_span">
+								<i class="spr_book ico_arr_ipc2"></i>
+								<span>개인정보 수집 및 이용 동의</span>
+							</span>
+							<a class="btn_agreement">
+								<span class="btn_text">보기</span>
+								<i class="fas fa-sharp fa-regular fa-arrow-down"></i>
+							</a>
+							<div class="useragreement_details">
+								[개인정보 수집 및 이용 동의]
+								<br>
+								<br>
+								1. 수집항목 : [필수] 주소, 아이디, [선택] 이메일주소
+								<br>
+								<br>
+								2. 수집 및 이용목적 : 사업자회원과 예약이용자의 원활한 거래 진행, 고객상담, 불만처리 등 민원 처리,
+								분쟁조정 해결을 위한 기록보존, 네이버 예약 이용 후 리뷰작성에 따른 네이버페이 포인트 지급 및 관련 안내
+								<br>
+								3. 보관기간
+								<br>
+								- 회원탈퇴 등 개인정보 이용목적 달성 시까지 보관
+								<br>
+								- 단, 상법 및 '전자상거래 등에서의 소비자 보호에 관한 법률' 등 관련 법령에 의하여
+								일정 기간 보관이 필요한 경우에는 해당 기간 동안 보관함
+								<br>
+								<br>
+								4. 동의 거부권 등에 대한 고지: 정보주체는 개인정보의 수집 및 이용 동의를 거부할 권리가 있으나, 이 경우 상품 및
+								서비스 예약이 제한될 수 있습니다.
+								<br>
+							</div>
+						</div>
+						<div class="agreement">
+							<span class="chk_txt_span">
+								<i class="spr_book ico_arr_ipc2"></i>
+								<span>개인정보 제3자 제공 동의</span>
+							</span>
+							<a class="btn_agreement">
+								<span class="btn_text">보기</span>
+								<i class="fas fa-sharp fa-regular fa-arrow-down"></i>
+							</a>
+							<div class="useragreement_details custom_details_wrap">
+								<div class="custom_details">
+									[개인정보 제3자 제공 동의]
+									<br>
+									<br>
+									1. 개인정보를 제공받는 자 : Chan 미디어앤아트
+									<br>
+									<br>
+									2. 제공하는 개인정보 항목 : [필수] 아이디, 이름, 배송지 [선텍] 이메일 주소
+									<br>
+									<br>
+									3. 개인정보를 제공받는 자의 이용목적 : 사업자회원과 예약이용자의 원활한 거래 진행, 고객상담, 불만처리 등
+									민원 처리, 서비스 이용에 따른 설문조사 및 혜택 제공, 분쟁조정 해결을 위한 기록보존
+									<br>
+									<br>
+									4. 개인정보를 제공받는 자의 개인정보 보유 및 이용기간 : 개인정보 이용목적 달성 시 까지 보관합니다.
+									<br>
+									<br>
+									5. 동의 거부권 등에 대한 고지 : 정보주체는 개인정보 제공 동의를 거부할 권리가 있으나, 이 경우 상품
+									및 서비스 예약이 제한될 수 있습니다.
+									<br>
+								</div>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 payment-box">
+                <h3 class="payment_header"> 배송지를 확인해주세요 </h3>
+                <div class="payment_header_eg"> Check Address </div>
+                {% if address: %}
+                    <span class="address_number" style="display:none;">{{ address.address_number }}</span>
+                    <span class="address"  style="display:none;">{{ address.address }}</span>
+                    <span class="address_detail"  style="display:none;">{{ address.address_detail}}</span>
+                    <span class="reference"  style="display:none;">{{ address.reference }}</span>
+                    <div class="correct_address"><i class="fa-solid fa-square-check"></i> 등록된 주소가 있습니다. </div>
+                    <button class="btn btn-outline-dark btn-sm address_button"> 기본 주소 사용 </button> <br>
+                    <div class="correct_address"><i class="fa-solid fa-square-check"></i> 기본 주소를 변경하고 싶으시면 <br> 아래 버튼을 클릭해주세요. </div>
+                    <a class="btn btn-outline-dark btn-sm change_address_button" href="{{ url_for('userPage',id=item.id) }}"> 기본 주소 변경 </a> <br>
+                    <div class="another_address"><i class="fa-solid fa-square-check"></i> 다른 주소를 사용하고 싶으면 <br> 아래에 새로 입력해주세요. </div>
+                {% else: %}
+                    <div class="register_address"><i class="fa-solid fa-square-check"></i> 주소등록을 아직 안했습니다.</div>
+                    <a class="btn btn-outline-dark btn-sm address_button" href="{{ url_for('userPage',id=item.id) }}"> 주소 등록하러 가기 </a>
+                    <div class="another_address"><i class="fa-solid fa-square-check"></i> 다른 주소를 사용하고 싶으면 <br> 아래에 새로 입력해주세요. </div>
+                {% endif %}
+                <div class="sample-box">
+                    <label for="sample6_postcode" class="postcode_label" style="margin-top:0px;"><i class="fa-solid fa-envelopes-bulk"></i> 우편번호 입력 </label> <br>
+                    <input type="text" id="sample6_postcode" placeholder="우편번호">
+                    <input type="button" class="btn btn-outline-dark btn-sm address_number_button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+                    <label for="sample6_address" class="postcode_label"><i class="fa-solid fa-location-dot"></i> 주소 입력 </label> <br>
+                    <input type="text" id="sample6_address" placeholder="주소">
+                    <label for="sample6_detailAddress" class="postcode_label"><i class="fa-solid fa-location-dot"></i> 상세주소 입력 </label> <br>
+                    <input type="text" id="sample6_detailAddress" placeholder="상세주소">
+                    <label for="sample6_detailAddress" class="postcode_label"><i class="fa-solid fa-plus"></i> 참고항목 입력 </label> <br>
+                    <input type="text" id="sample6_extraAddress" placeholder="참고항목">
+                </div>
+                <form method="post" class="payment_bar">
+                    <button type="submit" class="btn btn-warning pay_button" id="pay"><i class="fa-brands fa-cc-amazon-pay"></i> 카카오페이로 결제하기 </button>
+                </form>
+<!--                <form method="post" class="toss_bar">-->
+<!--                    <button type="submit" class="btn btn-warning pay_button" id="toss"><i class="fa-brands fa-cc-amazon-pay"></i> Toss로 결제하기 </button>-->
+<!--                </form>-->
+            </div>
+        </div>
+    </section>
+
+{% include "footer.html" %}
+</body>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    var payment_bar = document.querySelector(".payment_bar");
+
+    payment_bar.addEventListener("submit",function(evt){
+            evt.preventDefault();
+            var count_value = parseInt(document.querySelector("#count_value").value);
+
+            if (count_value === 0){
+                alert("상품 수량은 1개 이상 선택해주세요.");
+                return;
+            }
+            var address_number = document.querySelector("#sample6_postcode").value;
+            var address = document.querySelector("#sample6_address").value;
+            var address_detail = document.querySelector("#sample6_detailAddress").value;
+            var reference = document.querySelector("#sample6_extraAddress").value;
+
+            if (address_number.length === 0){
+                alert("우편번호를 입력해 주세요");
+                return;
+            }else if (address.length === 0){
+                alert("주소를 입력해 주세요");
+                return;
+            }else if (address_detail.length === 0){
+                alert("상세 주소를 입력해 주세요");
+                return;
+            }else if (reference.length === 0){
+                alert("참고 항목을 입력해 주세요");
+                return;
+            }
+            var agreementCheck = document.querySelector(".label.chk_txt_label").dataset.check;
+            if (agreementCheck === "0"){
+                alert("필수 항목에 동의해주세요");
+                return;
+            }
+
+            var item_id = document.querySelector("#item_id").innerHTML;
+            var item_count = parseInt(document.querySelector("#count_value").value);
+            let param = {
+                "id" : item_id,
+                "quantity" : item_count
+            };
+            $.ajax({
+                url: "/kakaopay/paymethod.ajax",
+                data: JSON.stringify(param),
+                contentType: "application/json",
+                dataType: "json",
+                type: "post",
+                async: false,
+                statusCode: {
+                    404: function () {
+                        alert("네트워크가 불안정합니다. 다시 시도부탁드립니다.");
+                    }
+                },
+                success: function (data) {
+                    var address_number = document.querySelector("#sample6_postcode").value;
+                    var address = document.querySelector("#sample6_address").value;
+                    var address_detail = document.querySelector("#sample6_detailAddress").value;
+                    var reference = document.querySelector("#sample6_extraAddress").value;
+                    var item_id = document.querySelector("#item_id").innerHTML;
+                    var count_value = document.querySelector("#count_value").value;
+                    postData = {
+                        "address_number" : address_number,
+                        "address" : address,
+                        "address_detail" : address_detail,
+                        "reference" : reference,
+                        "item_id" : item_id,
+                        "quantity" : count_value
+                    }
+
+                    $.ajax({
+                          type:"POST",
+                          url:"http://127.0.0.1:5000/buyProduct",
+                          data : JSON.stringify(postData),
+                          contentType: "application/json",
+                          success : function(data){
+                              console.log("success");
+                          },
+                          error : function(request,error){
+                              console.log("error");
+                          }
+                    });
+                    location.href=data["next_url"]
+                }
+            });
+    });
+</script>
+<!--<script>-->
+<!--    var toss_bar = document.querySelector(".toss_bar");-->
+
+<!--    toss_bar.addEventListener("submit",function(evt){-->
+<!--            evt.preventDefault();-->
+<!--            var count_value = parseInt(document.querySelector("#count_value").value);-->
+
+<!--            if (count_value === 0){-->
+<!--                alert("상품 수량은 1개 이상 선택해주세요.");-->
+<!--                return;-->
+<!--            }-->
+<!--            var address_number = document.querySelector("#sample6_postcode").value;-->
+<!--            var address = document.querySelector("#sample6_address").value;-->
+<!--            var address_detail = document.querySelector("#sample6_detailAddress").value;-->
+<!--            var reference = document.querySelector("#sample6_extraAddress").value;-->
+
+<!--            if (address_number.length === 0){-->
+<!--                alert("우편번호를 입력해 주세요");-->
+<!--                return;-->
+<!--            }else if (address.length === 0){-->
+<!--                alert("주소를 입력해 주세요");-->
+<!--                return;-->
+<!--            }else if (address_detail.length === 0){-->
+<!--                alert("상세 주소를 입력해 주세요");-->
+<!--                return;-->
+<!--            }else if (reference.length === 0){-->
+<!--                alert("참고 항목을 입력해 주세요");-->
+<!--                return;-->
+<!--            }-->
+<!--            var agreementCheck = document.querySelector(".label.chk_txt_label").dataset.check;-->
+<!--            if (agreementCheck === "0"){-->
+<!--                alert("필수 항목에 동의해주세요");-->
+<!--                return;-->
+<!--            }-->
+
+<!--            var item_id = document.querySelector("#item_id").innerHTML;-->
+<!--            var item_count = parseInt(document.querySelector("#count_value").value);-->
+<!--            let param = {-->
+<!--                "id" : item_id,-->
+<!--                "quantity" : item_count-->
+<!--            };-->
+<!--            $.ajax({-->
+<!--                url: "/toss",-->
+<!--                data: JSON.stringify(param),-->
+<!--                contentType: "application/json",-->
+<!--                dataType: "json",-->
+<!--                type: "post",-->
+<!--                async: false,-->
+<!--                statusCode: {-->
+<!--                    404: function () {-->
+<!--                        alert("네트워크가 불안정합니다. 다시 시도부탁드립니다.");-->
+<!--                    }-->
+<!--                },-->
+<!--                success: function (data) {-->
+<!--                    var address_number = document.querySelector("#sample6_postcode").value;-->
+<!--                    var address = document.querySelector("#sample6_address").value;-->
+<!--                    var address_detail = document.querySelector("#sample6_detailAddress").value;-->
+<!--                    var reference = document.querySelector("#sample6_extraAddress").value;-->
+<!--                    var item_id = document.querySelector("#item_id").innerHTML;-->
+<!--                    var count_value = document.querySelector("#count_value").value;-->
+<!--                    postData = {-->
+<!--                        "address_number" : address_number,-->
+<!--                        "address" : address,-->
+<!--                        "address_detail" : address_detail,-->
+<!--                        "reference" : reference,-->
+<!--                        "item_id" : item_id,-->
+<!--                        "quantity" : count_value-->
+<!--                    }-->
+
+<!--                    $.ajax({-->
+<!--                          type:"POST",-->
+<!--                          url:"http://127.0.0.1:5000/buyProduct",-->
+<!--                          data : JSON.stringify(postData),-->
+<!--                          contentType: "application/json",-->
+<!--                          success : function(data){-->
+<!--                              console.log("success");-->
+<!--                          },-->
+<!--                          error : function(request,error){-->
+<!--                              console.log("error");-->
+<!--                          }-->
+<!--                    });-->
+<!--                }-->
+<!--            });-->
+<!--    });-->
+<!--</script>-->
+<script>
+        $(document).ready(function () {
+            $('#cancel').on('click', function () {
+                let param = "dummy=" + Math.random();
+                $.ajax({
+                    url: "/kakaopay/cancel",
+                    data: param,
+                    dataType: "json",
+                    type: "post",
+                    async: false,
+                    statusCode: {
+                        404: function () {
+                            alert("네트워크가 불안정합니다. 다시 시도부탁드립니다.");
+                        }
+                    },
+                    success: function (data) {
+                        location.href=data["next_url"]
+                    }
+                });
+            });
+        })
+    </script>
+<script>
+    var minusTag = document.querySelector(".btn_plus_minus.spr_book2.ico_minus3");
+    var plusTag = document.querySelector(".btn_plus_minus.spr_book2.ico_plus3");
+
+    minusTag.addEventListener("click",function(evt){
+        var countValue = parseInt(document.querySelector("#count_value").value) -1;
+        if (countValue >= 0){
+            document.querySelector("#count_value").value = countValue;
+        }
+        var checkValue = parseInt(document.querySelector("#count_value").value);
+        if (checkValue === 0){
+            evt.target.className = "btn_plus_minus spr_book2 ico_minus3 disabled";
+            evt.target.nextElementSibling.className = "count_control_input disabled";
+        }
+
+        var item_price = parseInt(document.querySelector(".item_price").innerHTML.replaceAll(",",""));
+        var totalPrice = item_price * checkValue;
+        var priceText = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.querySelector(".total_price").innerHTML = priceText;
+    });
+    plusTag.addEventListener("click",function(evt){
+        var countValue = parseInt(document.querySelector("#count_value").value) +1;
+        var item_remain_count = parseInt(document.querySelector(".item_count").innerHTML);
+
+        if (countValue <= item_remain_count){
+            document.querySelector("#count_value").value = countValue;
+        }else{
+            alert("상품 재고가 부족합니다");
+        }
+        var checkValue = parseInt(document.querySelector("#count_value").value);
+        var minusTag = evt.target.parentNode.firstElementChild;
+        var inputTag = minusTag.nextElementSibling;
+
+        if (checkValue >= 1 && checkValue < item_remain_count){
+            minusTag.className = "btn_plus_minus spr_book2 ico_minus3";
+            inputTag.className = "count_control_input";
+        }
+        var item_price = parseInt(document.querySelector(".item_price").innerHTML.replaceAll(",",""));
+        var totalPrice = item_price * checkValue;
+        var priceText = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        document.querySelector(".total_price").innerHTML = priceText;
+
+    });
+</script>
+<script>
+</script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    function sample6_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+
+                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                if(data.userSelectedType === 'R'){
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                    // 조합된 참고항목을 해당 필드에 넣는다.
+                    document.getElementById("sample6_extraAddress").value = extraAddr;
+
+                } else {
+                    document.getElementById("sample6_extraAddress").value = '';
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('sample6_postcode').value = data.zonecode;
+                document.getElementById("sample6_address").value = addr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("sample6_detailAddress").focus();
+            }
+        }).open();
+    }
+</script>
+<script>
+    var address_button = document.querySelector(".address_button");
+
+    address_button.addEventListener("click",function(evt){
+        var address_number = document.querySelector(".address_number").innerHTML;
+        var address = document.querySelector(".address").innerHTML;
+        var address_detail = document.querySelector(".address_detail").innerHTML;
+        var reference = document.querySelector(".reference").innerHTML;
+
+        document.querySelector("#sample6_postcode").value = address_number;
+        document.querySelector("#sample6_address").value = address;
+        document.querySelector("#sample6_detailAddress").value = address_detail;
+        document.querySelector("#sample6_extraAddress").value = reference;
+    });
+</script>
+<script>
+        	var agreeCheckButton = document.querySelectorAll(".btn_text");
+
+        	for(var i=0;i<2;i++){
+
+        		agreeCheckButton[i].addEventListener("click",function(evt){
+        			if(evt.target.innerHTML === "보기"){
+        				evt.target.innerHTML = "접기";
+        				evt.target.nextElementSibling.className = "fas fa-sharp fa-regular fa-arrow-up";
+        				evt.target.parentNode.nextElementSibling.style.display = "block";
+        			}
+        			else{
+        				evt.target.innerHTML = "보기";
+        				evt.target.nextElementSibling.className = "fas fa-sharp fa-regular fa-arrow-down";
+        				evt.target.parentNode.nextElementSibling.style.display = "none";
+        			}
+
+        		});
+
+        	}
+
+        	var agreeLabel = document.querySelector(".label.chk_txt_label");
+
+        	agreeLabel.addEventListener("click",function(evt){
+        		var check = parseInt(agreeLabel.dataset.check);
+        		if(check === 0){
+
+        		    if (evt.target.tagName == "SPAN"){
+        		        evt.target.style.color = "#0aba16";
+        		    }else{
+        		        evt.target.firstElementChild.style.color = "#0aba16";
+        		    }
+            		document.documentElement.style.setProperty('--position-degree', '-75px -273px');
+            		agreeLabel.dataset.check = "1";
+        		}
+        		else{
+        		    if (evt.target.tagName == "SPAN"){
+        		        evt.target.style.color = "#000";
+        		    }else{
+        		        evt.target.firstElementChild.style.color = "#000";
+        		    }
+            		document.documentElement.style.setProperty('--position-degree', '-47px -273px');
+            		agreeLabel.dataset.check = "0";
+        		}
+        	})
+        </script>
+</html>

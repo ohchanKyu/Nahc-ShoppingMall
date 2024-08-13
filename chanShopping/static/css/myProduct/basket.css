@@ -1,0 +1,172 @@
+body{
+    background-color:#f3f5f8 !important;
+}
+#section{
+    margin:0 auto;
+    width:50%;
+    margin-top:30px;
+}
+.section_header{
+    text-align:center;
+    font-weight:bold;
+    padding:3% 0;
+    font-style:italic;
+}
+hr{
+    margin-top:0 !important;
+}
+.no_basket_list{
+    text-align:center;
+    margin:5% 0;
+    font-weight:bold;
+    color:#999;
+}
+.button_container{
+    display:flex;
+    font-weight:bold;
+    font-size:15px;
+    color:#999;
+    float:right;
+    margin:3% 0;
+}
+#deleteButton{
+    margin-left:20px;
+}
+.item_hr{
+    width:90%;
+    text-align:center;
+    position:relative;
+    left:30px;
+}
+.total_number{
+    font-weight:bold;
+    font-size:14px;
+    color:#999;
+}
+.item-card{
+    position:relative;
+    left:8px;
+    border-radius: 30px !important;
+    margin:4% 0;
+    margin-right:0 !important;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.driver_text{
+    font-weight:bold;
+    font-size:13px;
+    position:relative;
+    left:30px;
+}
+.span{
+    color:#2f5dee;
+}
+.address{
+    font-size:15px
+    color:#000;
+    font-weight:bold;
+}
+.edit{
+    margin-left:10px;
+}
+#checkButton, #all_check, #delete{
+    margin-right:5px;
+    cursor:pointer;
+}
+.item_image{
+    margin:10px 0;
+    position:relative;
+    left: 30px;
+    width:150px;
+    vertical-align:top;
+}
+.item_title{
+    width:500px;
+    margin:3% 0 2% 0;
+    font-weight:bold;
+    font-size:20px;
+    position:relative;
+    left:30px;
+}
+.text_container{
+    display:flex;
+}
+.title{
+    color:#000;
+    font-size:16px;
+    font-weight:bold;
+    word-break:keep-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.price, .item_price{
+    font-size:16px;
+    color:#000;
+    font-weight:bold;
+}
+.text{
+    position:relative;
+    width:250px !important;
+    display:inline-block;
+    left:55px;
+    top:10px;
+}
+.kakaopay{
+    color: #eeb408;
+    font-size:13px;
+    font-weight:bold;
+}
+.price_container{
+    position:relative;
+    top:10px;
+    left:70px;
+    width:90px !important;
+    display:inline-block;
+    text-align:center;
+    height:130px;
+}
+.price_text{
+    font-weight:bold;
+    color:#999;
+    font-size:13px;
+}
+.pay{
+    margin-top:10px;
+}
+.gototop
+{
+    z-index:1200;
+    position:relative;
+    background-color:#e9ecef;
+    text-align:center;
+    margin-top:10px;
+}
+.lnk_top
+{
+    padding:18px 0px 19.5px;
+    font-size:15px;
+    color:#000;
+}
+#footer
+{
+    margin-top:40px;
+    z-index:1200;
+    position:relative;
+    background-color:#e9ecef;
+    word-wrap:break-word;
+    text-align:center;
+    clear:both;
+    height:140px;
+}
+.name1
+{
+    margin-top:10px;
+    font-size:15px;
+    color:#999;
+}
+.copyright
+{
+    padding-right:10px;
+    font-size:13px;
+    color:#999;
+}

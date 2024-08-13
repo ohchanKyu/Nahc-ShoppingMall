@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Category</title>
+    <link rel="stylesheet" href="../static/css/product/category.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+<body>
+{% include "header.html" %}
+    <section id="section">
+        <h1 class="section_header"> {{ category }} </h1>
+    </section>
+    <span class="total_item"> 상품 {{items|length}} </span>
+    <hr>
+    <div class="item_container">
+        <ul class="item_list">
+            {% for i in range(0,10) %}
+                {% if i % 5 == 0 %}
+                    <hr>
+                {% endif %}
+                <li class="item">
+                    <a href="{{ url_for('detailPage',id=items[i].id) }}"><img src="{{ items[i].image }}" class="item_image"></a> <br>
+                    <div class="item_text">
+                        <span class="title"> {{ category }} </span> <br>
+                        <a href="{{ url_for('detailPage',id=items[i].id) }}" style="text-decoration:none;"><span class="total_title"> {{ items[i].title }} </span></a>
+                        <span class="price"> {{ items[i].price }}원 </span> <br>
+                        <a class="btn btn-success btn-sm shoppingButton" href="{{ items[i].link }}"><span class="button_text">네이버 쇼핑</span> </a> <br>
+                        <span class="review_count">
+                            {% if comment[i]["comment_length"] == 0: %}
+                                아직 등록된 리뷰가 없습니다.
+                            {% else: %}
+                                리뷰 총 {{ comment[i]["comment_length"] }}건 등록
+                            {% endif %}
+                        </span>
+                        {% if  not comment[i]["comment_length"] == 0: %}
+                            <span class="graph_mask">
+                                <em class="graph_value" >
+                                    <div class="star_image_box">
+                                        <img src="../static/images/star_img.png" alt="star" class="star_image" />
+                                    </div>
+                                </em>
+                            </span>
+                            <span class="total_ratio"> {{ comment[i]["average"] }} / 5.0</span>
+                        {% else: %}
+                            <span class="graph_mask">
+                                <em class="graph_value" >
+                                    <div class="star_image_box">
+                                        <img src="../static/images/no_star.png" alt="star" class="star_image" />
+                                    </div>
+                                </em>
+                            </span>
+                            <span class="total_ratio"> 0.0 / 5.0</span>
+                        {% endif %}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% include "footer.html" %}
+</body>
+</html>
+<script>
+    var starImage = document.querySelectorAll(".star_image");
+	var ratio = document.querySelectorAll(".total_ratio");
+
+	for(var i=0;i<starImage.length;i++){
+
+        item_ratio = ratio[i].innerHTML.split("/")[0];
+        console.log(item_ratio);
+        var percent = item_ratio / 5.0 * 100;
+        if(percent != 0){
+            starImage[i].style.width = percent+"px";
+        }
+	}
+</script>

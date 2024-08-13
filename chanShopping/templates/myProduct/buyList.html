@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>buyList</title>
+    <link rel="stylesheet" href="../static/css/myProduct/buyList.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" crossorigin="anonymous"></link>
+</head>
+<body>
+{% include "header.html" %}
+    <section id="section">
+        <div class="section_header_container">
+          <h1 class="section_header"><i class="fa-solid fa-bag-shopping"></i> 구매 상품 </h1>
+          <div class="total_number"><i class="fa-solid fa-bag-shopping"></i> 총 <span style="color:#0aba16;">{{ items | length }}</span>건 구매</div>
+        </div>
+        <hr style="border:1px solid #999;">
+        {% if items | length == 0 %}
+            <div class="no_buy_list"><i class="fa-solid fa-bag-shopping"></i> 아직 구매하신 상품이 없습니다. </div>
+        {% endif %}
+        {% for item in items %}
+            <div class="item_container">
+                <div class="item_date">구매날짜 <span style="font-style:italic;">{{ item["buy_info"].date }}</span></div>
+                 <img src="{{ item['item_info'].image }}" class="item_image"/>
+                 <div class="text_container">
+                     <div class="item_title">{{ item["item_info"].title }}</div>
+                     <div class="item_info">
+                            <div class="item_price">상품금액 {{ item["item_info"].price }}원</div> <span class="item_quantity">구매 수량 {{ item["buy_info"].quantity }}</span>
+                            <div class="item_price">총 결제금액 {{ item["item_info"].price.replace(",","")|int  * item["buy_info"].quantity|int }}원<span class="kakaopay"> Kakaopay <i class="fa-brands fa-cc-amazon-pay"></i></span></div>
+                     </div>
+                     <div class="buy_info">
+                        <div class="buy_info_header"><i class="fa-solid fa-truck-fast"></i> 배송 정보 </div>
+                         <p class="buy_info_text">
+                            우편번호 <i class="fa-solid fa-arrow-right" style="color:#000;"></i> {{ item["buy_info"].address_number }} <br>
+                            주소 <i class="fa-solid fa-arrow-right" style="color:#000;"></i> {{ item["buy_info"].address }} <br>
+                            상세 주소 <i class="fa-solid fa-arrow-right" style="color:#000;"></i> {{ item["buy_info"].address_detail }} <br>
+                            참고 사항 <i class="fa-solid fa-arrow-right" style="color:#000;"></i> {{ item["buy_info"].reference }}
+                        </p>
+                     </div>
+                     <div class="button_container">
+                         <a href="{{ url_for('reviewWritePage',item_id=item['item_info'].id )}}" class="btn btn-success btn-sm"><i class="fa-solid fa-pen-to-square"></i> 리뷰 쓰기 </a>
+                         <button class="btn btn-outline-dark btn-sm tel"><i class="fa-solid fa-phone"></i> 전화 </button>
+                         <button class="btn btn-outline-dark btn-sm conversation"><i class="fa-regular fa-comments"></i> 1:1 문의 </button>
+                    </div>
+                 </div>
+                <hr style="clear:both;">
+            </div>
+        {% endfor %}
+        {% if items | length  > 3 : %}
+        <button class="btn btn-outline-dark btn-block more_button" data-value="0"><i class="fa-brands fa-wordpress" style="margin-right:5px;"></i><span class="text">모든 상품 보기</span></button>
+        {% endif %}
+    </section>
+
+{% include "footer.html" %}
+</body>
+<script>
+    var price_text = document.querySelectorAll(".item_price");
+    for(var i=0;i<price_text.length;i++){
+        var new_price_text = price_text[i].innerHTML.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        price_text[i].innerHTML = new_price_text;
+    }
+    var item_container = document.querySelectorAll(".item_container");
+    if (item_container.length > 3){
+        for(var i=3;i<item_container.length;i++){
+            item_container[i].style.display = "none";
+        }
+    }
+
+</script>
+<script>
+    var more_button = document.querySelector(".more_button");
+
+    more_button.addEventListener("click",function(evt){
+        value = evt.target.dataset.value;
+        if (value === "0"){
+             var item_container = document.querySelectorAll(".item_container");
+             for(var i=0;i<item_container.length;i++){
+                item_container[i].style.display = "block";
+             }
+             var more_button_text = document.querySelector(".text");
+             more_button_text.innerHTML = "특정 상품만 보기";
+             evt.target.dataset.value = "1";
+        }else{
+            var item_container = document.querySelectorAll(".item_container");
+            for(var i=3;i<item_container.length;i++){
+               item_container[i].style.display = "none";
+            }
+            var more_button_text = document.querySelector(".text");
+            more_button_text.innerHTML = "모든 상품 보기";
+            evt.target.dataset.value = "0";
+        }
+
+    });
+</script>
+</html>

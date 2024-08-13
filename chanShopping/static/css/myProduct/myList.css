@@ -1,0 +1,117 @@
+ul{
+    padding:0;
+}
+#section{
+    margin:0 auto;
+    width:45%;
+    margin-top:30px;
+}
+hr{
+    margin-top:0 !important;
+}
+.total_number{
+    font-weight:bold;
+    font-size:14px;
+    color:#999;
+}
+.no_myList{
+    text-align:center;
+    margin:5% 0;
+    font-weight:bold;
+    color:#999;
+}
+.kakaopay{
+    color:#eeb408;
+}
+.item_container{
+    margin:5% 0;
+}
+.delete_button{
+    cursor:pointer;
+}
+.close_button{
+    float:left;
+}
+.section_header{
+    text-align:center;
+    font-weight:bold;
+    padding:3% 0;
+    font-style:italic;
+}
+.text_container{
+    display:inline-block;
+    padding:3% 5%;
+    height:150px;
+    width:400px !important;
+}
+.item_date{
+    font-weight:bold;
+    color:#999;
+    font-size:14px;
+}
+.item_image{
+    width:150px;
+    vertical-align: text-bottom;
+}
+.item_title{
+    display: -webkit-box;
+    color:#999;
+    font-weight:bold;
+    word-break:keep-all;
+    margin-bottom:10px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.shoppingButton{
+    margin-top:20px;
+}
+.button_description{
+    font-size:14px;
+    color:#999;
+    display:inline-block;
+    font-weight:bold;
+}
+.item_price{
+    font-weight:bold;
+}
+.kakaopay{
+    font-size:13px;
+}
+.gototop
+{
+    z-index:1200;
+    position:relative;
+    background-color:#e9ecef;
+    text-align:center;
+    margin-top:10px;
+}
+.lnk_top
+{
+    padding:18px 0px 19.5px;
+    font-size:15px;
+    color:#000;
+}
+#footer
+{
+    margin-top:40px;
+    z-index:1200;
+    position:relative;
+    background-color:#e9ecef;
+    word-wrap:break-word;
+    text-align:center;
+    clear:both;
+    height:140px;
+}
+.name1
+{
+    margin-top:10px;
+    font-size:15px;
+    color:#999;
+}
+.copyright
+{
+    padding-right:10px;
+    font-size:13px;
+    color:#999;
+}

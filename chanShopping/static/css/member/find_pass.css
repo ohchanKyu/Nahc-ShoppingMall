@@ -1,0 +1,82 @@
+#section{
+    text-align:center;
+}
+.section_header{
+    padding:4% 0 0 0;
+    margin-bottom:0;
+    font-weight:bold;
+    font-style:italic;
+}
+.section_header_text{
+    font-size:14px;
+    font-weight:bold;
+}
+.email_text{
+    margin-top:30px;
+    font-weight:bold;
+    margin-right:50px;
+}
+.email_check_text {
+    margin-top:20px;
+    font-weight:bold;
+    margin-right:145px;
+}
+.id_text{
+    margin-top:20px;
+    font-weight:bold;
+    margin-right:50px;
+}
+.email_check_input, .email_input, .id_input{
+    width:350px;
+    height:40px;
+}
+.id_input{
+    margin-bottom:30px;
+}
+.check_email_button{
+    margin:10px 245px 0 0;
+}
+#check_email_button{
+    margin:10px 280px 0 0;
+}
+.submit_button{
+    width:350px;
+    margin:0 auto;
+    height:50px;
+}
+.find_user{
+    margin-top:20px;
+    margin-bottom:50px;
+}
+a:hover{
+    color:#000;
+    text-decoration:none;
+}
+.new_user, .find_id, .find_pass{
+    color:#999;
+    text-decoration:none;
+    font-size:12px;
+}
+.find_id{
+    margin:0 4%;
+    padding-left:2%;
+}
+.password{
+    color:red;
+}
+.find_pass_ui{
+    margin:0 auto;
+    margin-top:40px;
+    border-top:3px solid #000;
+    width:500px;
+}
+.ui_header, .ui_text, .ui_sub_header{
+    font-weight:bold;
+}
+.ui_sub_header{
+    margin-top:30px;
+    color:#999;
+}
+.ui_header{
+    margin-top:30px;
+}

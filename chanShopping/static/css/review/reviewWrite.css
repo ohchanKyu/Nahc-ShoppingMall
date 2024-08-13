@@ -1,0 +1,218 @@
+#section{
+    margin:0 auto;
+    width:40%;
+}
+input{
+    top:15px !important;
+}
+.score_container{
+    position:relative;
+}
+.item_title{
+    font-weight:bold;
+    color:#0aba16;
+}
+.title_star{
+    margin-bottom:0;
+    font-weight:bold !important;
+}
+.review_header_text{
+    text-align:center;
+    font-weight:bold;
+    padding:3% 0;
+    font-style:italic;
+}
+.write_act
+{
+	position:relative;
+	margin-top:7px;
+	border-top:1px solid #e2e5e8;
+	background-color:#fff;
+}
+.write_act .title_star
+{
+	padding:16px 0 14.5px;
+	font-size:17px;
+	color:#000;
+	font-weight:normal;
+	text-align:center;
+}
+.write_act .review_rating
+{
+	padding-bottom:9px;
+	text-align:center;
+}
+.write_act .review_rating .rating
+{
+	display:block;
+	position:relative;
+	height:32px;
+	margin-top:-2px;
+	padding:2px 0;
+}
+.write_act .review_rating .rating .rating_rdo {
+    position: relative;
+    display: inline-block;
+    z-index: 20;
+    opacity: 0.001;
+    width: 35px;
+    height: 32px;
+    background-color: #fff;
+    cursor: pointer;
+    vertical-align: top;
+}
+input:checked[type=checkbox], input[type=checkbox] {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    -ms-appearance: none;
+    appearance: none;
+    border: none;
+}
+.write_act .review_rating .rating .rating_rdo + .span {
+    position: relative;
+    display: inline-block;
+    z-index: 10;
+    width: 35px;
+    height: 32px;
+    margin-left: -38px;
+    background-image: url('../../images/comment.png');
+    background-repeat: no-repeat;
+    background-size: 90px 130px;
+    background-position: 0 -92px;
+    cursor: pointer;
+}
+.write_act .review_rating .rating .star_rank.gray_star {
+    color: #ddd;
+}
+.write_act .review_rating .rating .star_rank {
+    display: inline-block;
+    height: 26px;
+    padding-left: 3.5px;
+    font-size: 37px;
+    font-weight: normal;
+    color: #000;
+    vertical-align: 2px;
+ }
+ .review_contents.write
+{
+	padding:6px 20px 0;
+	background-color:#fff;
+	font: 0px/0 a;
+	margin-top:20px;
+}
+.review_contents {
+    position: relative;
+    padding: 12px 15px 21px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.review_contents .review_write_info {
+    overflow-y: auto;
+    position: absolute;
+    top: 6px;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    padding: 7px 10px;
+    border: 1px solid #e8e8e8;
+    background-color: #fff;
+    font-family: 'HelveticaNeue', helvetica, 'AppleSDGothicNeo-Regular', 'AppleSDGothicNeo', '나눔고딕', NanumGothic, '맑은고딕', MalgunGothic, '돋움', Dotum, sans-serif;
+    font-size: 15px;
+    color: #989898;
+    line-height: 23px;
+    cursor: text;
+}
+.middot {
+    position: relative;
+    display: inline-block;
+    padding-left: 7.5px;
+}
+.middot:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 10px;
+}
+.review_contents .review_write_info .left_space {
+    position: relative;
+    display: inline-block;
+    padding-left: 7.5px;
+}
+.review_contents .review_textarea {
+    overflow: auto;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 7px 10px;
+    border: 1px solid #e8e8e8;
+    border-radius: 0;
+    font-family: 'HelveticaNeue', helvetica, 'AppleSDGothicNeo-Regular', 'AppleSDGothicNeo', '나눔고딕', NanumGothic, '맑은고딕', MalgunGothic, '돋움', Dotum, sans-serif;
+    font-size: 16px;
+    color: #777;
+    line-height: 20px;
+    box-sizing: border-box;
+}
+.review_write_footer_wrap {
+    padding: 0 20px 15px;
+    background-color: #fff;
+}
+.review_write_footer {
+    position: relative;
+    border: solid #e8e8e8;
+    border-width: 0 1px 1px;
+    box-sizing: border-box;
+}
+.review_write_footer .guide_review {
+    position: absolute;
+    top: 12px;
+    right: 8.5px;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 19px;
+    color: #999;
+    text-align: right;
+    box-sizing: border-box;
+}
+.register_button{
+    margin:0 auto;
+    margin-top:40px;
+    width:470px !important;
+}
+.gototop
+{
+    z-index:1200;
+    position:relative;
+    background-color:#e9ecef;
+    text-align:center;
+    margin-top:10px;
+}
+.lnk_top
+{
+    padding:18px 0px 19.5px;
+    font-size:15px;
+    color:#000;
+}
+#footer
+{
+    margin-top:40px;
+    z-index:1200;
+    position:relative;
+    background-color:#e9ecef;
+    word-wrap:break-word;
+    text-align:center;
+    clear:both;
+    height:140px;
+}
+.name1
+{
+    margin-top:10px;
+    font-size:15px;
+    color:#999;
+}
+.copyright
+{
+    padding-right:10px;
+    font-size:13px;
+    color:#999;
+}

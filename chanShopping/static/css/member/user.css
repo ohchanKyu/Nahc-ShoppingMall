@@ -1,0 +1,61 @@
+#section{
+    width:70%;
+    margin:0 auto;
+}
+.section_header{
+    padding:5% 0 0 0;
+    margin-bottom:0;
+    font-weight:bold;
+    font-style:italic;
+    text-align:center;
+}
+.section_header_text{
+    font-size:14px;
+    font-weight:bold;
+    text-align:center;
+    padding-bottom:3%;
+}
+.search_header{
+    text-align:center;
+    font-weight:bold;
+    font-size:20px;
+    margin:10px 0 20px 0;
+}
+.search_button{
+    margin-top:10px;
+}
+label{
+    font-weight:bold;
+    margin-top:10px;
+    margin-bottom:0px !important;
+}
+.address_button{
+    margin-top:3px;
+}
+.address_number_button{
+    position:relative;
+    bottom:3px;
+    left:10px;
+    font-size:14px;
+}
+#sample6_postcode{
+    width:150px;
+    height:30px;
+    font-size:13px;
+    font-weight:bold;
+}
+#sample6_address, #sample6_detailAddress, #sample6_extraAddress, #sample5_address{
+    width:400px;
+    height:30px;
+    font-size:13px;
+    font-weight:bold;
+}
+.submitButton, .shoppingButton{
+    margin-top:20px;
+    width:190px !important;
+}
+.shoppingButton{
+    position: relative;
+    bottom: 45px;
+    left: 210px
+}
