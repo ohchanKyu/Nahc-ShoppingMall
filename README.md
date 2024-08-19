@@ -109,12 +109,12 @@
      * Kakao 결제 및 결제 완료 화면 UI
        <p align="left">
          <img width="30%" height="300px" src="https://github.com/user-attachments/assets/e1f09ff9-56cc-4655-9a58-435382eee949"/>
-         <img width="60%" height="300px" src="https://github.com/user-attachments/assets/c5e1733f-e2be-4aff-a4ac-9f9ca475285c"/>
+         <img width="69%" height="300px" src="https://github.com/user-attachments/assets/c5e1733f-e2be-4aff-a4ac-9f9ca475285c"/>
        </p>
 
 <br>
 
-- <p>$\bf{\large{\color{#0aba16} 장바구니 \ 즐겨찾기 \ 구매목록 확인 \ 기능 }}$</p>
+- <p>$\bf{\large{\color{#0aba16} 장바구니 \ 즐겨찾기 \ 구매 \ 목록 확인 \ 기능 }}$</p>
 
    #### 기능
      * 장바구니 기능 및 즐겨찾기 서비스 기능
