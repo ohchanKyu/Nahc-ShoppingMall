@@ -48,87 +48,94 @@
 
 <br>
 
-### 서비스 기능
+### 페이지 및 서비스 기능
 
-- <p>$\bf{\large{\color{#0aba16} 퀴즈 \ 카테고리 \ 설정 \ 및 \ 문제풀이 \ 화면 }}$</p>
+- <p>$\bf{\large{\color{#0aba16} 메인화면 \ 및 \ 대표 \ 상품 \ UI }}$</p>
 
 
    #### 기능
-     * 퀴즈에 대한 난이도, 문제 수, 카테고리에 대한 설정 제공
-     * 난이도에 따라 차등 점수 부여
-     * 사용자 친화적인 인터페이스로 손쉬운 설정 및 문제 풀이 제공
+     * 쇼핑몰에 대한 메인 화면
+     * 대표 상품, 인기 상품, 평점 순으로 쇼핑 아이템 나열
+     * 상품에 대한 검색 기능 제공
    #### 핵심 기술
-     * Trivia API
-     * 사용자 랭킹 시스템 데이터 (DBMS)
-     * Trivia Data 필터 기능
+     * Naver 검색 API
+     * 쇼핑 상품 데이터 (DBMS)
+     * 리뷰 점수 및 구매 수에 따른 정렬 알고리즘
+     * 사용자 입력에 따른 검색 알고리즘
    #### 사용자 인터페이스
-     * 퀴즈 카테고리 설정 메인 화면 UI
+     * 기본 메인 화면 UI
        <p align="left">
-         <img src="https://github.com/user-attachments/assets/abf6cb1c-2fa7-440e-8b5d-af44111856b1"/>
+         <img src="https://github.com/user-attachments/assets/0a7543b7-1218-499b-963a-0d3c48fdf65b"/>
        </p>
-     * 퀴즈 카테고리 설졍 UI
+
+     * 상품 검색 결과 UI
        <p align="left">
-         <img src="https://github.com/user-attachments/assets/8d126ac0-de46-4fa6-a289-85ec8175e8f2"/>
+         <img src="https://github.com/user-attachments/assets/796e47a3-31aa-4a68-99d4-c581525ee659"/>
        </p>
-     * 퀴즈 풀이 진행 UI
+       
+     * 평점 순 상품 나열 UI
        <p align="left">
-         <img width="45%" height="250px" src="https://github.com/user-attachments/assets/8f4187bb-3d76-4daa-92a4-01bff2ba69be"/>
-         <img width="50%" height="250px" src="https://github.com/user-attachments/assets/1008df46-3567-43ac-9d02-6bbf1dcb7e3e"/>
+         <img src="https://github.com/user-attachments/assets/a7253c9f-4be0-4b04-9d0c-45a9cb7f9f10"/>
        </p>
 
 <br>
 
-- <p>$\bf{\large{\color{#0aba16} 완료 \ 문제 \ 및 \ 랭킹 \ 확인 }}$</p>
+- <p>$\bf{\large{\color{#0aba16} 상품 \ 상세 \ 정보 \ 및 \ 결제 \ 기능 }}$</p>
 
    #### 기능
-     * 문제 풀이 완료 후 카테고리 및 총점수, 정답률 확인
-     * 자신의 점수를 다른 사용자의 점수와 비교할 수 있는 랭킹 시스템 제공
-     * 자신이 틀린 문제 혹은 맞은 문제를 각 문제 번호 별로 확인
+     * 상품에 대한 상세 정보 및 사용자 리뷰 제공
+     * Kakao API를 이용한 카카오페이 결제 기능
+     * Kakao API를 이용한 지도 제공 및 주소 검색
    #### 핵심 기술
-     * Trivia API
-     * 사용자 랭킹 시스템 데이터 (DBMS)
-     * 사용자의 문제 정답 여부 추적 알고리즘
+     * Kakao API
+     * 쇼핑 상품 데이터 (DBMS)
+     * Kakao Map / Daum PostCode
    #### 사용자 UI
-     * 카테고리 및 통계 요약 UI <br>
+     * 상품 상세 정보 UI <br>
        <p align="left">
-         <img src="https://github.com/user-attachments/assets/5c53df10-49bc-42f1-accf-fd5a8154f232"/>
+         <img src="https://github.com/user-attachments/assets/03fc10fb-4d12-4822-8073-ecc5d511d098"/>
        </p>
 
-     * 문제 요약 및 정답 UI
+     * 상품 구매 배송지 확인 및 결제 관련 UI
        <p align="left">
-         <img src="https://github.com/user-attachments/assets/5373d711-ab85-4137-b396-0e4612661e0a"/>
+         <img src="https://github.com/user-attachments/assets/da86b975-c299-47c8-9fec-162bd541a7a8"/>
        </p>
-     * 서비스 사용자 랭킹 시스템 UI
+
+     * 배송지 수정 및 지도 화면 UI
        <p align="left">
-         <img src="https://github.com/user-attachments/assets/58e640da-904a-4e9f-912e-75c39c9b911d"/>
+         <img src="https://github.com/user-attachments/assets/f7551dba-8523-4644-bcfb-b0d33a64df36"/>
        </p>
+       
+     * Kakao 결제 및 결제 완료 화면 UI
        <p align="left">
-         <img src="https://github.com/user-attachments/assets/938d1960-e1c8-4acb-9ebb-863054bdab12"/>
+         <img width="30%" height="300px" src="https://github.com/user-attachments/assets/e1f09ff9-56cc-4655-9a58-435382eee949"/>
+         <img width="60%" height="300px" src="https://github.com/user-attachments/assets/c5e1733f-e2be-4aff-a4ac-9f9ca475285c"/>
        </p>
 
 <br>
 
-- <p>$\bf{\large{\color{#0aba16} 게시판  \ 및 \ 댓글 \ 기능 }}$</p>
+- <p>$\bf{\large{\color{#0aba16} 장바구니 \ 즐겨찾기 \ 구매목록 확인 \ 기능 }}$</p>
 
    #### 기능
-     * 퀴즈에 대한 여러 답을 주고받을 수 있는 커뮤니티 제공
-     * 사용자 간 댓글을 통한 소통
-     * 퀴즈에 대한 사진 업로드 기능
+     * 장바구니 기능 및 즐겨찾기 서비스 기능
+     * 사용자가 구매한 목록 확인 가능
+     * 구매한 상품에 대한 리뷰 쓰기 기능
    #### 핵심 기술
-     * 커뮤니티 플랫폼 구축 및 댓글 시스템
-     * 파일 업로드 기능
-     * 사용자 포스트 및 댓글 데이터 (DBMS)
+     * Kakao API
+     * 카카오페이를 통한 추가 결제 기능
+     * 사용자 구매목록 및 리뷰 데이터 (DBMS)
    #### 사용자 UI
-     * 게시판 메인화면 UI <br>
+     * 사용자 구매목록 UI
        <p align="left">
-         <img src="https://github.com/user-attachments/assets/a5327085-504b-44a7-b13e-823bbed2322b"/>
+         <img src="https://github.com/user-attachments/assets/a31426ee-4225-4b48-984d-68ee12fec42f"/>
        </p>
-     * 게시판 글 및 댓글 UI
+     * 사용자 즐겨찾기 UI
        <p align="left">
-         <img src="https://github.com/user-attachments/assets/1a5eb8a6-3d51-4a00-94f4-45f00f96cc04"/>
+         <img src="https://github.com/user-attachments/assets/798adedc-3825-42c5-a41e-e1dc9b4942cc"/>
        </p>
+     * 사용자 장바구니 UI
        <p align="left">
-         <img src="https://github.com/user-attachments/assets/41efcad5-d33c-46fe-8a01-1a86de2768f3"/>
+         <img src="https://github.com/user-attachments/assets/b8b40f62-de74-422b-a6be-7e522026736f"/>
        </p>
 
 ### 아키텍쳐
