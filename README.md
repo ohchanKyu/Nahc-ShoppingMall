@@ -114,7 +114,7 @@
 
 <br>
 
-- <p>$\bf{\large{\color{#0aba16} 장바구니 \ 즐겨찾기 \ 구매 \ 목록 확인 \ 기능 }}$</p>
+- <p>$\bf{\large{\color{#0aba16} 장바구니 \ 즐겨찾기 \ 구매 \ 목록 \ 확인 \ 기능 }}$</p>
 
    #### 기능
      * 장바구니 기능 및 즐겨찾기 서비스 기능
@@ -137,6 +137,8 @@
        <p align="left">
          <img src="https://github.com/user-attachments/assets/b8b40f62-de74-422b-a6be-7e522026736f"/>
        </p>
+
+<br> 
 
 ### 아키텍쳐
 #### 디렉터리 구조
