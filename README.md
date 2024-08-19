@@ -141,4 +141,76 @@
 ### 아키텍쳐
 #### 디렉터리 구조
 ```
+📦python
+ ┣ 📂api
+ ┃ ┣ 📂__pycache__
+ ┃ ┃ ┗ 📜naverAPI.cpython-311.pyc
+ ┃ ┗ 📜naverAPI.py
+ ┣ 📂form
+ ┃ ┣ 📂__pycache__
+ ┃ ┃ ┣ 📜findIdForm.cpython-311.pyc
+ ┃ ┃ ┣ 📜findPassForm.cpython-311.pyc
+ ┃ ┃ ┣ 📜loginForm.cpython-311.pyc
+ ┃ ┃ ┗ 📜registerForm.cpython-311.pyc
+ ┃ ┣ 📜findIdForm.py
+ ┃ ┣ 📜findPassForm.py
+ ┃ ┣ 📜loginForm.py
+ ┃ ┗ 📜registerForm.py
+ ┗ 📂mail
+ ┃ ┣ 📂__pycache__
+ ┃ ┃ ┗ 📜sendMail.cpython-311.pyc
+ ┃ ┗ 📜sendMail.py
+📦static
+ ┣ 📂css
+ ┃ ┣ 📂main
+ ┃ ┃ ┗ 📜main.css
+ ┃ ┣ 📂member
+ ┃ ┃ ┣ 📜find_id.css
+ ┃ ┃ ┣ 📜find_pass.css
+ ┃ ┃ ┣ 📜login.css
+ ┃ ┃ ┣ 📜register.css
+ ┃ ┃ ┗ 📜user.css
+ ┃ ┣ 📂myProduct
+ ┃ ┃ ┣ 📜basket.css
+ ┃ ┃ ┣ 📜buyList.css
+ ┃ ┃ ┗ 📜myList.css
+ ┃ ┣ 📂product
+ ┃ ┃ ┣ 📜category.css
+ ┃ ┃ ┣ 📜detail.css
+ ┃ ┃ ┣ 📜payment.css
+ ┃ ┃ ┣ 📜search.css
+ ┃ ┃ ┗ 📜success.css
+ ┃ ┗ 📂review
+ ┃ ┃ ┣ 📜review.css
+ ┃ ┃ ┗ 📜reviewWrite.css
+ ┗ 📂images
+ ┃ ┣ 📜comment.png
+        ...
+ ┃ ┗ 📜star_img.png
+📦templates
+ ┣ 📂kakaopay
+ ┃ ┣ 📜cancel.html
+ ┃ ┣ 📜fail.html
+ ┃ ┣ 📜payment.html
+ ┃ ┗ 📜success.html
+ ┣ 📂member
+ ┃ ┣ 📜find_id.html
+ ┃ ┣ 📜find_pass.html
+ ┃ ┣ 📜login.html
+ ┃ ┣ 📜register.html
+ ┃ ┗ 📜user.html
+ ┣ 📂myProduct
+ ┃ ┣ 📜basket.html
+ ┃ ┣ 📜buyList.html
+ ┃ ┗ 📜myList.html
+ ┣ 📂product
+ ┃ ┣ 📜category.html
+ ┃ ┣ 📜detail.html
+ ┃ ┗ 📜search.html
+ ┣ 📂review
+ ┃ ┣ 📜review.html
+ ┃ ┗ 📜reviewWrite.html
+ ┣ 📜footer.html
+ ┣ 📜header.html
+ ┗ 📜main.html
 ```
